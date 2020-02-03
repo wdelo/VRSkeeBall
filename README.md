@@ -1,2 +1,2 @@
 # DemoSkeeBallProject
-An initial template for the SkeelBall project
+An initial template for the SkeeBall project
