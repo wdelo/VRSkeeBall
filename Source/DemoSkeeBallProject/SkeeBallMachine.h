@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "VRBase/ABaseEntity/ABaseEntity.h"
 #include "Components/StaticMeshComponent.h"
+#include "DemoSkeeBallProjectGameModeBase.h"
 #include "SkeeBallMachine.generated.h"
 
 UCLASS()
