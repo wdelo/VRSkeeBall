@@ -8,13 +8,13 @@ ASpawnBallButton::ASpawnBallButton() {
 	m_pStaticMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("static mesh");
 	RootComponent = m_pStaticMeshComponent;
 
-	UStaticMesh* mesh = FindMesh("StaticMesh'/Game/StarterContent/Shapes/Shape_Cylinder.Shape_Cylinder'");
+	UStaticMesh* mesh = FindMesh("StaticMesh'/Game/Meshes/Cylinder.Cylinder'");
 	m_pStaticMeshComponent->SetStaticMesh(mesh);
 
 	// creating static mesh that will represent the spawn location of the skee balls
-	m_pSpawnLocationMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("static mesh");
+	m_pSpawnLocationMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("static_mesh");
 
-	UStaticMesh* location = FindMesh("StaticMesh'/Game/StarterContent/Shapes/Shape_Cylinder.Shape_Cylinder'");
+	UStaticMesh* location = FindMesh("StaticMesh'/Game/Meshes/Cube.Cube'");
 	m_pSpawnLocationMeshComponent->SetStaticMesh(location);
 
 	// setting scale to static meshes
@@ -26,6 +26,15 @@ ASpawnBallButton::ASpawnBallButton() {
 }
 
 void ASpawnBallButton::OnPressed_Implementation(ABaseController* pController) {
+
+	// get spawn location
+	FVector loc = m_pSpawnLocationMeshComponent->GetComponentLocation();
+
+	// spawn skee ball at location
+	ASkeeBall* skeeBall = (ASkeeBall*)
+	GetWorld()->SpawnActor(ASkeeBall::StaticClass(), &loc);
+
+	Msg("Button is pressed");
 
 }
 
