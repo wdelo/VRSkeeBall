@@ -14,6 +14,9 @@ class DEMOSKEEBALLPROJECT_API ADemoSkeeBallProjectGameModeBase : public AGameMod
 private:
 	int m_iScore;
 public:
+
+	ADemoSkeeBallProjectGameModeBase();
+
 	void BeginPlay() override;
 
 	UFUNCTION(BlueprintCallable)
@@ -21,4 +24,6 @@ public:
 
 	UFUNCTION(BlueprintCallable)
 	void SetScore(int newScore);
+
+	int m_iWinScore;
 };

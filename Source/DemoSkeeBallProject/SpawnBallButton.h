@@ -17,8 +17,6 @@ public:
 	ASpawnBallButton();
 
 	void OnPressed_Implementation(ABaseController* pController) override;
-	
-	UStaticMeshComponent* m_pStaticMeshComponent;
 
 	UPROPERTY(EditAnywhere)
 	UStaticMeshComponent* m_pSpawnLocationMeshComponent;

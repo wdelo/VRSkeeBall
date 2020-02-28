@@ -16,8 +16,15 @@ class DEMOSKEEBALLPROJECT_API ASkeeBallMachine : public ABaseEntity
 public:
 	ASkeeBallMachine();
 
+	virtual void DefaultThink() override;
+
 	UFUNCTION(BlueprintCallable)
 	void AddToScore(int points);
+	
+	UFUNCTION(BlueprintCallable)
+	int GetTheScore();
 
 	UStaticMeshComponent* m_pStaticMeshComponent;
+	bool m_bHasPlayerWon;
+
 };
