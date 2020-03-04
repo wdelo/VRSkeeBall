@@ -2,7 +2,7 @@
 
 #include "SkeeBallMachine.h"
 #include "DemoSkeeBallProjectGameModeBase.h"
-
+#include "System/NLogger.h"
 
 ASkeeBallMachine::ASkeeBallMachine() {
 
@@ -19,15 +19,13 @@ ASkeeBallMachine::ASkeeBallMachine() {
 }
 
 void ASkeeBallMachine::DefaultThink() {
-
 	if (m_bHasPlayerWon) {
 		Msg("You won!");
 	}
-
 }
 
-void ASkeeBallMachine::AddToScore(int points) {
 
+void ASkeeBallMachine::AddToScore(int points) {
 	ADemoSkeeBallProjectGameModeBase* mode = 
 		Cast<ADemoSkeeBallProjectGameModeBase>(GetWorld()->GetAuthGameMode());
 	if (mode) {
@@ -35,22 +33,17 @@ void ASkeeBallMachine::AddToScore(int points) {
 		int currScore = mode->GetScore();
 		// add to score
 		mode->SetScore(currScore + points);
-		// check win condition
-		m_bHasPlayerWon = mode->GetScore() >= mode->m_iWinScore;
-	}
 
+		m_bHasPlayerWon = (mode->GetScore() >= mode->m_iWinScore);
+	}
 }
 
-int ASkeeBallMachine::GetTheScore() {
+int ASkeeBallMachine::GetTheScore()
+{
+	ADemoSkeeBallProjectGameModeBase* mode = Cast<ADemoSkeeBallProjectGameModeBase>(GetWorld()->GetAuthGameMode());
 
-	ADemoSkeeBallProjectGameModeBase* mode = 
-		Cast<ADemoSkeeBallProjectGameModeBase>(GetWorld()->GetAuthGameMode());
-	int score = -1;
 	if (mode) {
-		score = mode->GetScore();
+		return mode->GetScore();
 	}
-
-	return score;
-
 }
 

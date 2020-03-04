@@ -26,5 +26,4 @@ public:
 
 	UStaticMeshComponent* m_pStaticMeshComponent;
 	bool m_bHasPlayerWon;
-
 };

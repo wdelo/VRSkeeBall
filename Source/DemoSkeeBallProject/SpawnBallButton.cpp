@@ -4,8 +4,12 @@
 
 ASpawnBallButton::ASpawnBallButton() {
 
+
+	UStaticMesh* mesh = FindMesh("StaticMesh'/Game/StarterContent/Shapes/Shape_Cylinder.Shape_Cylinder'");
+	m_pMeshComponent->SetStaticMesh(mesh);
+
 	// creating static mesh that will represent the spawn location of the skee balls
-	m_pSpawnLocationMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("Ball Spawn Location");
+	m_pSpawnLocationMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("Location Mesh");
 
 	UStaticMesh* location = FindMesh("StaticMesh'/Game/Meshes/Cube.Cube'");
 	m_pSpawnLocationMeshComponent->SetStaticMesh(location);

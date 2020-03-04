@@ -5,6 +5,9 @@
 
 ASkeeBall::ASkeeBall() {
 
+	m_pPickupMeshComponent = CreateDefaultSubobject<UStaticMeshComponent>("static mesh");
+	RootComponent = m_pPickupMeshComponent;
+
 	UStaticMesh* mesh = FindMesh("StaticMesh'/Game/StarterContent/Shapes/Shape_Sphere.Shape_Sphere'");
 	m_pPickupMeshComponent->SetStaticMesh(mesh);
 
