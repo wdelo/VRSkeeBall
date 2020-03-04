@@ -22,5 +22,5 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetScore(int newScore);
 
-	m_iWinScore;
+	int m_iWinScore;
 };
