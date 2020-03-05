@@ -2,8 +2,6 @@
 
 #include "DemoSkeeBallProjectGameModeBase.h"
 
-
-
 ADemoSkeeBallProjectGameModeBase::ADemoSkeeBallProjectGameModeBase() : m_iWinScore(100) {}
 
 void ADemoSkeeBallProjectGameModeBase::BeginPlay() {

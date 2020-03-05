@@ -41,9 +41,10 @@ void ASkeeBallMachine::AddToScore(int points) {
 int ASkeeBallMachine::GetTheScore()
 {
 	ADemoSkeeBallProjectGameModeBase* mode = Cast<ADemoSkeeBallProjectGameModeBase>(GetWorld()->GetAuthGameMode());
+	int score = -1;
 
-	if (mode) {
-		return mode->GetScore();
-	}
+	if (mode) score = mode->GetScore();
+
+	return score;
 }
 
