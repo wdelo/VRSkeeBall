@@ -1,2 +1,2 @@
 # DemoSkeeBallProject
-An initial template for the SkeeBall project
+William Delo's version of the SkeeBall Project
