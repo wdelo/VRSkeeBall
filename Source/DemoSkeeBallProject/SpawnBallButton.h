@@ -16,6 +16,8 @@ class DEMOSKEEBALLPROJECT_API ASpawnBallButton : public AWorldButton
 public:
 	ASpawnBallButton();
 
+	int m_iBallIndex;
+
 	void OnPressed_Implementation(ABaseController* pController) override;
 
 	UPROPERTY(EditAnywhere)

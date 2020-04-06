@@ -4,6 +4,7 @@
 
 ADemoSkeeBallProjectGameModeBase::ADemoSkeeBallProjectGameModeBase() : m_iWinScore(100) {}
 
+// score starts at zero
 void ADemoSkeeBallProjectGameModeBase::BeginPlay() {
 	SetScore(0);
 }

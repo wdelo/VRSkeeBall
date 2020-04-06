@@ -4,7 +4,10 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/GameModeBase.h"
+#include "System/EHandle.h"
+#include "System/NLogger.h"
 #include "DemoSkeeBallProjectGameModeBase.generated.h"
+
 
 UCLASS()
 class DEMOSKEEBALLPROJECT_API ADemoSkeeBallProjectGameModeBase : public AGameModeBase
@@ -16,6 +19,14 @@ private:
 public:
 	ADemoSkeeBallProjectGameModeBase();
 
+	// ball pool
+	TArray<EHANDLE> m_aEBalls;
+
+	// win score set to 100 in constructor
+	int m_iWinScore;
+
+	// Functions
+
 	void BeginPlay() override;
 
 	UFUNCTION(BlueprintCallable)
@@ -24,5 +35,11 @@ public:
 	UFUNCTION(BlueprintCallable)
 	void SetScore(int newScore);
 
-	int m_iWinScore;
 };
+
+/*
+* Global Preprocessor Defintions
+*/
+
+// maximum number of balls in a game
+#define MAX_NUM_BALLS 10
