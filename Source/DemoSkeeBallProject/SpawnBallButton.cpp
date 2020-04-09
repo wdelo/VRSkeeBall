@@ -36,23 +36,18 @@ void ASpawnBallButton::OnPressed_Implementation(ABaseController* pController) {
 		// if current number of balls is less than max number (10)
 		if (mode->m_aEBalls.Num() < MAX_NUM_BALLS) {
 			ASkeeBall* newSkeeBall = (ASkeeBall*) GetWorld()->SpawnActor(ASkeeBall::StaticClass(), &loc);
-
-			Msg("Ball added");
+	
 			mode->m_aEBalls.Add(newSkeeBall->GetEHandle());
 
 		}
 		// if current num = max number
 		else {
-
-			Msg("Ball removed");
-			mode->m_aEBalls.RemoveAt(m_iBallIndex); // doesn't actually remove an actor, but thinks it did, so another press will spawn an 11th ball
+			mode->m_aEBalls[m_iBallIndex]->GetActor()->SetActorLocation(loc);
 
 			if (m_iBallIndex >= MAX_NUM_BALLS - 1) {
 				m_iBallIndex = 0;
-				Msg("Index reset");
 			} else {
 				m_iBallIndex++;
-				Msg("Index++");
 			}
 		}
 

@@ -13,5 +13,4 @@ class DEMOSKEEBALLPROJECT_API ASkeeBall : public APickup
 
 public:
 	ASkeeBall();
-
 };
