@@ -1,0 +1,3 @@
+[submodule "Source/DemoSkeeBallProject/VRBase"]
+	path = Source/DemoSkeeBallProject/VRBase
+	url = https://github.com/MMC-Scholars/VRBase
